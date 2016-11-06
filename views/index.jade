@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    script(src="/javascripts/imageCropper.js")
+  body(class="container")
+
+    h1= title
+    input(id='input',type='file')
+    div
+      img(src="",id="currentImage",class='hide')
+    div(id='cropDetails',class='hide')
+      h2 Crop Details
+      div(id='preview')
+
+      div(class='form-group')
+        label top X coordinate:
+        input(type='text',id='topX',class="form-control")
+      div(class='form-group')
+        label top Y coordinate:
+        input(type='text',id='topY',class="form-control")
+      div(class='form-group')
+        label Width
+        input(type='text',id='width',class="form-control")
+      div(class='form-group')
+        label Height
+        input(type='text',id='height',class="form-control")
+      div(class='form-group')
+        button(id='crop',class="btn btn-default") Crop
+      div
+        img(src="",id="targetImage",class='hide')
+      div
+        form(method="post",enctype="multipart/form-data",class='hide', id='uploadForm')
+          input(type='hidden', name='croppedImage',id='croppedImage',value="")
+          input(type='hidden', name='imageName',id='imageName',value="")
+          input(type='submit',value="Upload Image",class="btn btn-default")
+
+
+
+
+
